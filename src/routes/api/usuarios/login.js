@@ -15,6 +15,8 @@ export const post = async ({ request, locals }) => {
         mode: "no-cors"
     });
 
+    console.log(response);
+
     if (response.ok) {
         return {
             status: 200,
