@@ -11,7 +11,7 @@ export const post = async ({ request, locals }) => {
         method: "POST",
         headers,
         body: JSON.stringify(body),
-        //mode: "no-cors"
+        mode: "no-cors"
     });
 
     if (response.ok) {
