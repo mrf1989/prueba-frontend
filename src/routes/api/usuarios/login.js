@@ -4,10 +4,14 @@ export const post = async ({ request, locals }) => {
     const body = await request.json();
     const apiURI = locals.apiURI;
 
+    console.log("POST TO:", `${apiURI}/api/login`);
+    const data = JSON.stringify(body);
+    console.log("WITH DATA:", data);
+
     const response = await fetch(`${apiURI}/api/login`, {
         method: "POST",
         headers,
-        body: JSON.stringify(body)
+        body: data
     });
 
     if (response.ok) {
@@ -18,7 +22,8 @@ export const post = async ({ request, locals }) => {
         return {
             status: 401,
             body: JSON.stringify({
-                message: "Usuario y contraseña no válidos."
+                message: "Usuario y contraseña no válidos.",
+                error: await response.json()
             })
         }
     }

@@ -18,6 +18,7 @@ const handleLogin = async () => {
     if (response.ok) {
         goto("/");
     } else {
+        console.error("LOGIN ERROR - Se ha producido un error en la autenticación.");
         error = await response.json()
     }
 }
@@ -40,5 +41,6 @@ const handleLogin = async () => {
     <div class="alert alert-warning" role="alert">
         {error.message}
     </div>
+    <pre>{error.error}</pre>
     {/if}
 </div>
