@@ -11,7 +11,8 @@ export const post = async ({ request, locals }) => {
     const response = await fetch(`${apiURI}/api/login`, {
         method: "POST",
         headers,
-        body: data
+        body: data,
+        mode: "no-cors"
     });
 
     if (response.ok) {
