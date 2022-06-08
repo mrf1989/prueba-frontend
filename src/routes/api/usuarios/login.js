@@ -1,5 +1,5 @@
 export const post = async ({ request, locals }) => {
-    const headers = new Headers(request.headers);
+    const headers = new Headers();
     headers.set("Content-Type", "application/json");
     headers.set("connection", "keep-alive");
     const body = await request.json();
@@ -11,7 +11,7 @@ export const post = async ({ request, locals }) => {
         method: "POST",
         headers,
         body: JSON.stringify(body),
-        mode: "no-cors"
+        //mode: "no-cors"
     });
 
     if (response.ok) {
