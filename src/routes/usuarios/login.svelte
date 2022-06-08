@@ -9,7 +9,7 @@ const handleLogin = async () => {
         headers: {
             "Content-Type": "application/json"
         },
-        mode: "no-cors",
+        //mode: "no-cors",
         body: JSON.stringify({
             username,
             password

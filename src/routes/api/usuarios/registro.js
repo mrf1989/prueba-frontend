@@ -10,8 +10,6 @@ export const post = async ({ request, locals }) => {
         body: JSON.stringify(body)
     });
 
-    console.log(response);
-
     if (response.ok) {
         return {
             status: 201,
