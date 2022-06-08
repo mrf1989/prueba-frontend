@@ -18,6 +18,7 @@ export const post = async ({ request, locals }) => {
     if (response.ok) {
         return {
             status: 200,
+            headers: response.headers
         }
     } else {
         return {
