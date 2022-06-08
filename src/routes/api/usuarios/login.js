@@ -8,7 +8,7 @@ export const post = async ({ request, locals }) => {
     const data = JSON.stringify(body);
     console.log("WITH DATA:", data);
 
-    console.log(request);
+    console.log(request.headers);
 
     const response = await fetch(`${apiURI}/api/login`, {
         method: "POST",
