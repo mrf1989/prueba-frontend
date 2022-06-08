@@ -1,7 +1,16 @@
 export const post = async ({ request, locals }) => {
-    const headers = new Headers();
-    headers.set("Content-Type", "application/json");
-    headers.set("connection", "keep-alive");
+    console.log(request.headers);
+    const headers = new Headers({
+        "accept": "*/*",
+        "host": request.headers.get("host"),
+        "content-type": "application/json",
+        "connection": "keep-alive",
+        "cookie": request.headers.get("cookie")
+    });
+    // headers.set("Content-Type", "application/json");
+    // headers.set("connection", "keep-alive");
+    // headers.set("cookie", request.headers.get('cookie'));
+    // headers.set("host", request.headers.get('host'));
     const body = await request.json();
     const apiURI = locals.apiURI;
 

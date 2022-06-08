@@ -5,6 +5,8 @@ export const post = async ({ request, locals }) => {
     const body = await request.json();
     const apiURI = locals.apiURI;
 
+    console.log(headers);
+
     const response = await fetch(`${apiURI}/api/usuarios`, {
         method: "POST",
         headers,
