@@ -23,7 +23,7 @@ export const post = async ({ request, locals }) => {
             status: 401,
             body: JSON.stringify({
                 message: "Usuario y contraseña no válidos.",
-                error: await response.json()
+                error: await response.text()
             })
         }
     }
