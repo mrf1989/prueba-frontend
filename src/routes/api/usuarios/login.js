@@ -3,7 +3,7 @@ export const post = async ({ request, locals }) => {
     const headers = new Headers({
         accept: "*/*",
         "accept-encoding": "gzip, deflate, br",
-        //host: request.headers.get("host"),
+        host: request.headers.get("host"),
         referer: request.headers.get("referer"),
         "content-type": "application/json",
         connection: "keep-alive",
