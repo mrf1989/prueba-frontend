@@ -1,11 +1,12 @@
 export const post = async ({ request, locals }) => {
     console.log(request.headers);
     const headers = new Headers({
-        //"accept": "*/*",
-        //"host": request.headers.get("host"),
+        accept: "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        host: request.headers.get("host"),
         "content-type": "application/json",
-        "connection": "keep-alive",
-        "cookie": request.headers.get("cookie")
+        connection: "keep-alive",
+        cookie: request.headers.get("cookie")
     });
     // headers.set("Content-Type", "application/json");
     // headers.set("connection", "keep-alive");
