@@ -1,7 +1,7 @@
 export const post = async ({ request, locals }) => {
     console.log(request.headers);
     const headers = new Headers({
-        "accept": "*/*",
+        //"accept": "*/*",
         "host": request.headers.get("host"),
         "content-type": "application/json",
         "connection": "keep-alive",
