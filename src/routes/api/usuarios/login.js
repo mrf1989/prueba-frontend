@@ -4,7 +4,6 @@ export const post = async ({ request, locals }) => {
         accept: "*/*",
         "accept-encoding": "gzip, deflate, br",
         host: request.headers.get("host"),
-        referer: request.headers.get("referer"),
         "content-type": "application/json",
         connection: "keep-alive",
         cookie: request.headers.get("cookie")
